@@ -17,7 +17,7 @@ public class CustomUserDetailService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		CustomUserDetail customUserDetail = new CustomUserDetail();
 
-		// if used database. username validation .
+		// if used database. username validation.
 
 		// default settings.
 		String password = "sample12";

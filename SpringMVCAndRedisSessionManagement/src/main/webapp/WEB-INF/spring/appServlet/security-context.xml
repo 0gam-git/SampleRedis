@@ -8,12 +8,6 @@
 
 	<context:annotation-config />
 
-	<!-- redis -->
-	<bean
-		class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration" />
-	<bean
-		class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory" />
-
 	<security:http auto-config='true' use-expressions="true">
 		<security:csrf disabled="true" />
 
@@ -30,7 +24,7 @@
 
 		<security:session-management>
 			<security:concurrency-control
-				max-sessions="1" expired-url="/login/concurrent" />
+				max-sessions="1" expired-url="/login/concurrent"  />
 		</security:session-management>
 
 		<security:form-login login-page="/login"

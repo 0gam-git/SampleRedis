@@ -40,13 +40,12 @@ public class HomeController {
 		CustomUserDetail customUserDetail = (CustomUserDetail) auth.getPrincipal();
 		String username = customUserDetail.getUsername();
 		String sessionId = req.getSession().getId();
+		req.getSession().setMaxInactiveInterval(60 * 1000);
 
 		model.addAttribute("sessionId", sessionId);
 		model.addAttribute("username", username);
-		
-		
-		model.addAttribute("serverTime", formattedDate);
 
+		model.addAttribute("serverTime", formattedDate);
 
 		return "home";
 	}
