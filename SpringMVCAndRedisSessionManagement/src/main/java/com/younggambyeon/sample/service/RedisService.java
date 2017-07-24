@@ -1,18 +1,18 @@
 package com.younggambyeon.sample.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Service;
+import java.net.URL;
 
-@Service
-public class RedisService {
+public interface RedisService {
 
-	@Autowired
-	private RedisTemplate<String, String> redisTemplate;
+	public void testConvertAndSend(String channel, String message);
 
-	public void test() {
+	public void addList(String userId, URL url);
 
-		redisTemplate.convertAndSend("channel", "message ~~~");
+	public Object getValue(String key);
 
-	}
+	public void setValue(String key, String value);
+
+	public void deleteKey(String key);
+
+	public void test(String key);
 }
